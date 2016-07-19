@@ -78,12 +78,22 @@ class IndexController extends Controller
         Article::where('id',$id)->increment('viewCount');
         $articleContent=Article::where('id',$id)->first();
         $cid=Article::where('id',$id)->value('cid');
+
+        //上一篇文章
+        $article['pre']=Article::where('id','<',$id)->orderBy('id','desc')->first();
+        //下一篇文章
+        $article['next']=Article::where('id','>',$id)->orderBy('id','asc')->first();
+        //相关文章
+        $relevantArticles=Article::where('cid',$cid)->where('id','<>',$id)->get();
+
         //面包屑
         $categorys=Category::all()->toArray();
         $data=new Data;
         $data=$data->parentChannel($categorys, $cid);
         sort($data);
         return view('home.new')->with('articleContent',$articleContent)
-                               ->with('cates',$data);//面包屑
+                               ->with('cates',$data)//面包屑
+                                ->with('article',$article)
+                                ->with('relevantArticles',$relevantArticles);
     }
 }
