@@ -10,11 +10,11 @@
 <div class="banner">
   <section class="box">
     <ul class="texts">
-      <p>打了死结的青春，捆死一颗苍白绝望的灵魂。</p>
-      <p>为自己掘一个坟墓来葬心，红尘一梦，不再追寻。</p>
-      <p>加了锁的青春，不会再因谁而推开心门。</p>
+      <p>世界上最遥远的距离，</p>
+      <p>不是生与死，而是你亲手自造的bug</p>
+      <p>就在你眼前，而你却怎么也找不到...</p>
     </ul>
-    <div class="avatar"><a href="#"><span>杨青</span></a> </div>
+    <div class="avatar"><a href="#"><span>杜磊</span></a> </div>
   </section>
 </div>
 <div class="template">
